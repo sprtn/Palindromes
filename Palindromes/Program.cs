@@ -17,8 +17,7 @@ namespace Palindromes
         {
             Console.WriteLine("Enter a word to find out if it's a palindrome: ");
             string word = Console.ReadLine();
-            Console.WriteLine(IsPalindrome(word));
-            Console.WriteLine();
+            Console.WriteLine(IsPalindrome(word) + "\n");
             AlwaysRun();
         }
 
