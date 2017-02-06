@@ -24,13 +24,8 @@ namespace Palindromes
         private static bool IsPalindrome(string word)
         {
             char[] charArray = word.ToLower().ToCharArray();
-            word = new string(charArray);
             Array.Reverse(charArray);
-            if (word == new string(charArray)) {
-                return true;
-            } else {
-                return false;
-            }
+            return word.ToLower() == new string(charArray) ? true : false;
         }
     }
 }
