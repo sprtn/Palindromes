@@ -40,17 +40,19 @@ namespace Palindromes
         /// is the same backwards as it is forwards. The method is a bit compact,
         /// but the logic behind is as follows:
         /// 
-        /// Create a character array with lower-case letters from the input
-        /// Reverse the order of the array
-        /// Put back into a string, 
-        /// validate it against the input string.
+        /// 1. Create a character array with lower-case letters from the input
+        /// 2. Override the input to be lower case, for the test later (This gave me an unnecessary headache)
+        /// 3. Reverse the order of the array
+        /// 4. Put back into a string and validate it against the input string.
+        /// 5. return true or false
         /// 
         /// </summary>
-        /// <param name="word"> Word here is the input from the ReadLine in AlwaysRun. </param>
+        /// <param name = "word"> Word here is the input from the ReadLine in AlwaysRun. </param>
         /// <returns></returns>
         private static bool IsPalindrome(string word)
         {
             char[] charArray = word.ToLower().ToCharArray();
+            word = new string(charArray);
             Array.Reverse(charArray);
             if (word == new string(charArray)) {
                 return true;
@@ -60,14 +62,3 @@ namespace Palindromes
         }
     }
 }
-/*
- * Note: This program doesn't work 100%.
- * It functions in a weird way when long
- * strings are being inputted.
- * 
- * For example: "Agnes i senga" does not
- * equal true, according to this program,
- * while it is. "L o l", however, returns
- * true. There must be a part of this I
- * didn't quite understand yet.
- */
